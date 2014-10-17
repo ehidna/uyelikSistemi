@@ -9,8 +9,8 @@ app.get('/', function (req, res) {
 })
 
 app.get('/kayit', function (req, res) {
-
-  res.send('Merhaba')
+  console.log('helloo basaari')
+  res.redirect('/basari')
 })
 
 
