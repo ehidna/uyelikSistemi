@@ -1,25 +1,82 @@
 var express = require('express')
 var kayit = require('./kayit')
 var app = express()
+var mongodb = require('mongodb')
+var mongoose = require('mongoose')
+var user = require('./user')
+var bodyParser = require('body-parser')
+
+app.use( bodyParser.json() )       // to support JSON-encoded bodies
+app.use( bodyParser.urlencoded() ) // to support URL-encoded bodies
+app.use(express.static(__dirname + '/public'))
+
 app.set('view engine', 'ejs')
 
+dbURI = 'localhost'
+mongoose.connect(dbURI)
+mongoose.connection.once('connected', function(){
+  console.log('Connected to database')
+})
+
 app.get('/', function (req, res) {
-  res.render('index', { title: 'The index page!' })
+  res.render('index')
+})
+
+app.post('/giris', function(req, res){
+  user.findOne({
+    email: req.body.email, password: req.body.password
+    }, function(err, obj){
+    if(obj === null){
+      console.log("bulunamadi")
+      res.redirect('/')
+    }else{
+      console.log(obj)
+      res.redirect('/girisOnay')
+    }
+  })
+})
+
+app.get('/girisOnay', function(req, res){
+  res.render('giris', { title: 'Giris'})
 })
 
 app.get('/kayit', function (req, res) {
-  res.render('kayit', { title: 'Bu kayit!'})
+  res.render('kayit')
 })
 
-app.get('/basari', function (req, res) {
-  res.render('basari', { title: 'Bu basari sayfasi!' })
-})
-
-app.get('/kayit_et', function (req, res) {
-  kayit.kaydet(req)
-  if(basari){
-    res.redirect('/basari')
+app.post('/kayit_et', function (req, res) {
+  if(req.body.email === req.body.remail && req.body.email !== null){
+    if(req.body.password === req.body.repassword && req.body.password !==null){
+      user.findOne({
+        email: req.body.email
+        }, function(err, obj){
+        if(obj === null ){
+          kayit.kaydet(req)
+          res.redirect('/basari')
+        }else{
+          console.log("email has been used  : " + obj)
+          res.redirect('/kayit')
+        }
+      })
+    }else {
+      console.error("password eslesmedi")
+    }
+  }else{
+    console.error("email eslesmedi")
   }
 })
 
-var server = app.listen(3000);
+app.get('/basari', function (req, res){
+  user.find({}).exec(function(err, models){
+    if(err){
+      console.log('bulunamadi')
+    }else{
+      console.log('models: ' + models)
+    }
+  })
+  res.render('basari', { title: 'Basari' })
+})
+
+var server = app.listen(3000, function(){
+  console.log('Listening on port 3000')
+});
