@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/public'))
 
 app.set('view engine', 'ejs')
 
-dbURI = 'localhost'
+dbURI = 'mongodb://admin:123Asd123@ds037451.mongolab.com:37451/uyelik'
 mongoose.connect(dbURI)
 mongoose.connection.once('connected', function(){
   console.log('Connected to database')
