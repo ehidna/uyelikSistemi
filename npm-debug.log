@@ -1,0 +1,105 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink /usr/bin/node
+5 warn package.json UyelikSistemi@1.0.0 No description
+6 warn package.json UyelikSistemi@1.0.0 No repository field.
+7 warn package.json UyelikSistemi@1.0.0 No README data
+8 verbose readDependencies using package.json deps
+9 verbose install where, deps [ '/Users/fatihbulut/Desktop/UyelikSistemi',
+9 verbose install   [ 'body-parser',
+9 verbose install     'bootstrap',
+9 verbose install     'ejs',
+9 verbose install     'express',
+9 verbose install     'mongodb',
+9 verbose install     'mongoose',
+9 verbose install     'node' ] ]
+10 info preinstall UyelikSistemi@1.0.0
+11 warn package.json node@0.0.0 No description
+12 warn package.json node@0.0.0 No repository field.
+13 verbose readDependencies using package.json deps
+14 verbose already installed skipping express@^4.12.0 /Users/fatihbulut/Desktop/UyelikSistemi
+15 verbose already installed skipping mongodb@^1.4.31 /Users/fatihbulut/Desktop/UyelikSistemi
+16 verbose already installed skipping mongoose@^3.8.23 /Users/fatihbulut/Desktop/UyelikSistemi
+17 verbose cache add [ 'node@^0.12.0', null ]
+18 verbose cache add name=undefined spec="node@^0.12.0" args=["node@^0.12.0",null]
+19 verbose parsed url { protocol: null,
+19 verbose parsed url   slashes: null,
+19 verbose parsed url   auth: null,
+19 verbose parsed url   host: null,
+19 verbose parsed url   port: null,
+19 verbose parsed url   hostname: null,
+19 verbose parsed url   hash: null,
+19 verbose parsed url   search: null,
+19 verbose parsed url   query: null,
+19 verbose parsed url   pathname: 'node@^0.12.0',
+19 verbose parsed url   path: 'node@^0.12.0',
+19 verbose parsed url   href: 'node@^0.12.0' }
+20 verbose cache add name="node" spec="^0.12.0" args=["node","^0.12.0"]
+21 verbose parsed url { protocol: null,
+21 verbose parsed url   slashes: null,
+21 verbose parsed url   auth: null,
+21 verbose parsed url   host: null,
+21 verbose parsed url   port: null,
+21 verbose parsed url   hostname: null,
+21 verbose parsed url   hash: null,
+21 verbose parsed url   search: null,
+21 verbose parsed url   query: null,
+21 verbose parsed url   pathname: '^0.12.0',
+21 verbose parsed url   path: '^0.12.0',
+21 verbose parsed url   href: '^0.12.0' }
+22 verbose addNamed [ 'node', '^0.12.0' ]
+23 verbose addNamed [ null, '>=0.12.0-0 <0.13.0-0' ]
+24 verbose already installed skipping body-parser@^1.12.0 /Users/fatihbulut/Desktop/UyelikSistemi
+25 silly lockFile 9b28002f-node-0-12-0 node@^0.12.0
+26 verbose lock node@^0.12.0 /Users/fatihbulut/.npm/9b28002f-node-0-12-0.lock
+27 verbose already installed skipping bootstrap@^3.3.2 /Users/fatihbulut/Desktop/UyelikSistemi
+28 silly addNameRange { name: 'node', range: '>=0.12.0-0 <0.13.0-0', hasData: false }
+29 verbose already installed skipping ejs@^2.3.1 /Users/fatihbulut/Desktop/UyelikSistemi
+30 verbose request where is /node
+31 verbose request registry https://registry.npmjs.org/
+32 verbose request id 005350ed5ee26c03
+33 verbose url raw /node
+34 verbose url resolving [ 'https://registry.npmjs.org/', './node' ]
+35 verbose url resolved https://registry.npmjs.org/node
+36 verbose request where is https://registry.npmjs.org/node
+37 info trying registry request attempt 1 at 10:08:30
+38 verbose etag "BWJ3173VMWU79FIC4YM65REKP"
+39 http GET https://registry.npmjs.org/node
+40 http 304 https://registry.npmjs.org/node
+41 silly registry.get cb [ 304,
+41 silly registry.get   { date: 'Tue, 24 Feb 2015 08:08:29 GMT',
+41 silly registry.get     server: 'Apache',
+41 silly registry.get     via: '1.1 varnish',
+41 silly registry.get     'last-modified': 'Tue, 24 Feb 2015 08:08:29 GMT',
+41 silly registry.get     'cache-control': 'max-age=60',
+41 silly registry.get     etag: '"BWJ3173VMWU79FIC4YM65REKP"',
+41 silly registry.get     age: '4',
+41 silly registry.get     'x-served-by': 'cache-fra1226-FRA',
+41 silly registry.get     'x-cache': 'HIT',
+41 silly registry.get     'x-cache-hits': '1',
+41 silly registry.get     'x-timer': 'S1424765309.960290,VS0,VE0',
+41 silly registry.get     vary: 'Accept',
+41 silly registry.get     'content-length': '0',
+41 silly registry.get     'keep-alive': 'timeout=10, max=50',
+41 silly registry.get     connection: 'Keep-Alive' } ]
+42 verbose etag https://registry.npmjs.org/node from cache
+43 silly addNameRange number 2 { name: 'node', range: '>=0.12.0-0 <0.13.0-0', hasData: true }
+44 silly addNameRange versions [ 'node', [ '0.0.0' ] ]
+45 silly lockFile 9b28002f-node-0-12-0 node@^0.12.0
+46 silly lockFile 9b28002f-node-0-12-0 node@^0.12.0
+47 error notarget No compatible version found: node@'>=0.12.0-0 <0.13.0-0'
+47 error notarget Valid install targets:
+47 error notarget ["0.0.0"]
+47 error notarget
+47 error notarget This is most likely not a problem with npm itself.
+47 error notarget In most cases you or one of your dependencies are requesting
+47 error notarget a package version that doesn't exist.
+48 error System Darwin 14.1.0
+49 error command "node" "/usr/local/bin/npm" "install" "--save"
+50 error cwd /Users/fatihbulut/Desktop/UyelikSistemi
+51 error node -v v0.10.32
+52 error npm -v 1.4.28
+53 error code ETARGET
+54 verbose exit [ 1, true ]
