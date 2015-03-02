@@ -13,7 +13,9 @@ app.use(express.static(__dirname + '/public'))
 app.set('view engine', 'ejs')
 
 dbURI = 'mongodb://admin:123Asd123@ds037451.mongolab.com:37451/uyelik'
+//  dbURI = 'localhost'
 mongoose.connect(dbURI)
+
 mongoose.connection.once('connected', function(){
   console.log('Connected to database')
 })
@@ -31,12 +33,14 @@ app.post('/giris', function(req, res){
       res.redirect('/')
     }else{
       console.log(obj)
+      req.session.user = obj
       res.redirect('/girisOnay')
     }
   })
 })
 
 app.get('/girisOnay', function(req, res){
+  console.log(req.session.user)
   res.render('giris', { title: 'Giris'})
 })
 
@@ -78,5 +82,5 @@ app.get('/basari', function (req, res){
 })
 
 var server = app.listen(process.env.PORT || 3000, function(){
-  console.log('Listening on port 3000')
+  console.log('Listening on port 3000 or ' + process.env.PORT)
 });
