@@ -1,5 +1,5 @@
 {
-  "name": "uyelikuygulamasi",
+  "name": "camel case",
   "version": "1.0.0",
   "dependencies": {
     "body-parser": "^1.12.0",
