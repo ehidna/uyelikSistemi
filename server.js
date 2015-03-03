@@ -46,7 +46,11 @@ app.post('/giris', function(req, res){
 })
 
 app.get('/girisOnay', function(req, res){
-  res.render('giris', { title: req.session.user})
+  if(req.session.user){
+    res.render('giris', { title: req.session.user})
+  }else{
+    res.redirect('/')
+  }
 })
 
 app.get('/kayit', function (req, res) {
