@@ -80,13 +80,13 @@ app.post('/kayit_et', function (req, res) {
 })
 
 app.get('/basari', function (req, res){
-  user.find({}).exec(function(err, models){
-    if(err){
-      console.log('bulunamadi')
-    }else{
-      console.log('models: ' + models)
-    }
-  })
+  // user.find({}).exec(function(err, models){
+  //   if(err){
+  //     console.log('bulunamadi')
+  //   }else{
+  //     console.log('models: ' + models)
+  //   }
+  // })
   res.render('basari', { title: 'Basari' })
 })
 
