@@ -1,4 +1,5 @@
 var express = require('express')
+var session = require('express-session')
 var kayit = require('./kayit')
 var app = express()
 var mongodb = require('mongodb')
@@ -9,6 +10,7 @@ var bodyParser = require('body-parser')
 app.use( bodyParser.json() )       // to support JSON-encoded bodies
 app.use( bodyParser.urlencoded() ) // to support URL-encoded bodies
 app.use(express.static(__dirname + '/public'))
+app.use(session({ secret: 'keyboard cat' }))
 
 app.set('view engine', 'ejs')
 
@@ -21,7 +23,11 @@ mongoose.connection.once('connected', function(){
 })
 
 app.get('/', function (req, res) {
-  res.render('index')
+  if(req.session.user){
+    res.redirect('/girisOnay')
+  }else{
+    res.render('index')
+  }
 })
 
 app.post('/giris', function(req, res){
@@ -33,15 +39,18 @@ app.post('/giris', function(req, res){
       res.redirect('/')
     }else{
       console.log(obj)
-      req.session.user = obj
+      req.session.user = obj.email
       res.redirect('/girisOnay')
     }
   })
 })
 
 app.get('/girisOnay', function(req, res){
-  console.log(req.session.user)
-  res.render('giris', { title: 'Giris'})
+  if(req.session.user){
+    res.render('giris', { title: req.session.user})
+  }else{
+    res.redirect('/')
+  }
 })
 
 app.get('/kayit', function (req, res) {

@@ -6,6 +6,7 @@
     "bootstrap": "^3.3.2",
     "ejs": "^2.3.1",
     "express": "^4.12.0",
+    "express-session": "^1.10.3",
     "mongodb": "^1.4.31",
     "mongoose": "^3.8.23"
   },
