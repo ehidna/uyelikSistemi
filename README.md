@@ -4,4 +4,4 @@
 
 Ultimate single page publishing platform ever.
 
-  [Test it here](uyelikuyg.herokuapp.com)
+  [Test it here](http://uyelikuyg.herokuapp.com)
