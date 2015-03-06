@@ -32,7 +32,7 @@ app.get('/', function (req, res) {
 
 app.post('/giris', function(req, res){
   user.findOne({
-    email: req.body.email, password: req.body.password
+    email: req.body.emailAddress, password: req.body.psword
     }, function(err, obj){
     if(obj === null){
       console.log("bulunamadi")

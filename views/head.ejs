@@ -11,3 +11,17 @@
 
 <!-- Custom styles for this template -->
 <link href="/css/signin.css" rel="stylesheet">
+<script type="text/javascript" src="/js/angular.js"></script>
+<script type="text/javascript" src="/js/angular-messages.js"></script>
+<script type="text/javascript">
+  angular.module('app', ['ngMessages'])
+  .controller('signUpController', function($scope, $http){
+    $scope.submitted = false;
+    $scope.submit = function() {
+      $scope.submitted = true;
+    };
+    $scope.interacted = function(field) {
+        return $scope.submitted || field.$dirty;
+      };
+  });
+</script>

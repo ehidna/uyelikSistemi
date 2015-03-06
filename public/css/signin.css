@@ -1,3 +1,4 @@
+
 body {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -32,6 +33,29 @@ body {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+.form-signin input[type="email"]. {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.ng-active {
+  background:maroon;
+  color:white;
+  padding:8px;
+  border-radius:5px;
+  margin-top:8px;
+  margin-bottom:8px;
+  position:relative;
+}
+.ng-active:after {
+  position:absolute;
+  top:-9px;
+  content:"";
+  left:20px;
+  border-style:solid;
+  border-color:transparent transparent maroon;
+  border-width:5px;
 }
 .form-signin input[type="password"] {
   margin-bottom: 10px;
